@@ -13,7 +13,7 @@ $(document).ready(function() {
 		let activeTab = $(`ul.tabs li:eq(${param})`).find("a").attr("href"); //Find the href attribute value to identify the active tab + content
 		$(activeTab).fadeIn(); //Fade in the active ID content
 		let valueLi = $(activeTab).find('.pagination').find('li').length;
-		$('.gallery_container')[0].style.height = 127 + valueLi*121 + 'px';
+		if (document.body.id == 'page4') $('.imgCont')[0].style.height = valueLi*121 + 'px';
 	//On Click Event
 	$("ul.tabs li").click(onClick);
 });
@@ -25,8 +25,7 @@ function onClick() {
 		var activeTab = $(this).find("a").attr("href"); //Find the href attribute value to identify the active tab + content
 		$(activeTab).fadeIn(); //Fade in the active ID content
 		let valueLi = $(activeTab).find('.pagination').find('li').length;
-		$('.gallery_container')[0].style.height = 127 + valueLi*121 + 'px';
+		$('.imgCont')[0].style.height = valueLi*121 + 'px';
 		return false;
 	}
-
 	
